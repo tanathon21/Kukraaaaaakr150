@@ -30,39 +30,36 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         }
     }
 
-   public void OnEndDrag(PointerEventData eventData)
-{
-    if (draggingObject != null)
+    public void OnEndDrag(PointerEventData eventData)
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-
-        if (Physics.Raycast(ray, out hit))
+        if (draggingObject != null)
         {
-            GameObject targetObject = hit.collider.gameObject;
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
 
-            // ตรวจสอบว่า targetObject เป็นโมเดลที่สามารถแทนที่ได้หรือไม่
-            if (targetObject.CompareTag("ReplaceableModel"))
+            if (Physics.Raycast(ray, out hit))
             {
-                // ลบโมเดลเดิมออก
-                Destroy(targetObject); 
+                GameObject targetObject = hit.collider.gameObject;
 
-                // วางโมเดลใหม่ที่ตำแหน่งของ hit
-                draggingObject.transform.position = hit.point; // ใช้ตำแหน่งของ hit
-                draggingObject.transform.localScale = Vector3.one; // ตั้งขนาดให้คงที่ (1, 1, 1)
+                // ตรวจสอบว่า targetObject เป็นโมเดลที่สามารถแทนที่ได้หรือไม่
+                if (targetObject.CompareTag("ReplaceableModel"))
+                {
+                    // ลบโมเดลเดิมออก
+                    Destroy(targetObject);
+
+                    draggingObject.tag = "ReplaceableModel"; // ตั้ง tag ให้เหมือนโมเดลเดิม
+                }
+                else
+                {
+                    Destroy(draggingObject); // หากไม่สามารถแทนที่ได้ ให้ทำลายโมเดลที่ลาก
+                }
             }
             else
             {
-                Destroy(draggingObject); // หากไม่สามารถแทนที่ได้ ให้ทำลายโมเดลที่ลาก
+                Destroy(draggingObject); // หากไม่ชนอะไรให้ทำลายโมเดลที่ลาก
             }
-        }
-        else
-        {
-            Destroy(draggingObject); // หากไม่ชนอะไรให้ทำลายโมเดลที่ลาก
-        }
 
-        draggingObject = null; // รีเซ็ต draggingObject
+            draggingObject = null; // รีเซ็ต draggingObject
+        }
     }
-}
-
 }
