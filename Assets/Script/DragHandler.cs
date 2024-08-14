@@ -44,10 +44,17 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
                 // ตรวจสอบว่า targetObject เป็นโมเดลที่สามารถแทนที่ได้หรือไม่
                 if (targetObject.CompareTag("ReplaceableModel"))
                 {
+                    // เก็บตำแหน่งเดิมของ targetObject
+                    Vector3 originalPosition = targetObject.transform.position;
+
                     // ลบโมเดลเดิมออก
                     Destroy(targetObject);
 
-                    draggingObject.tag = "ReplaceableModel"; // ตั้ง tag ให้เหมือนโมเดลเดิม
+                    // ตั้งค่าตำแหน่งของ draggingObject ให้ตรงกับตำแหน่งเดิมของ targetObject
+                    draggingObject.transform.position = originalPosition;
+
+                    // ตั้ง tag ให้เหมือนโมเดลเดิม
+                    draggingObject.tag = "ReplaceableModel";
                 }
                 else
                 {
@@ -62,4 +69,6 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
             draggingObject = null; // รีเซ็ต draggingObject
         }
     }
+
+
 }
