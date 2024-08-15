@@ -42,7 +42,7 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
                 GameObject targetObject = hit.collider.gameObject;
 
                 // ตรวจสอบว่า targetObject เป็นโมเดลที่สามารถแทนที่ได้หรือไม่
-                if (targetObject.CompareTag("ReplaceableModel"))
+                if (targetObject.CompareTag("DropArea"))
                 {
                     // เก็บตำแหน่งเดิมของ targetObject
                     Vector3 originalPosition = targetObject.transform.position;
@@ -54,7 +54,7 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
                     draggingObject.transform.position = originalPosition;
 
                     // ตั้ง tag ให้เหมือนโมเดลเดิม
-                    draggingObject.tag = "ReplaceableModel";
+                    draggingObject.tag = "DropArea";
                 }
                 else
                 {
