@@ -26,6 +26,7 @@ ScriptsOnlyBuild:
     - UnityEditor.TestTools.TestRunner.TestRun.TestJobDataHolder
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
+    - UnityEngine.EventSystems.EventTrigger
     - UnityEngine.EventSystems.StandaloneInputModule
     - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
@@ -64,6 +65,8 @@ ScriptsOnlyBuild:
     - UnityEngine.TextCore.GlyphMetrics
     - UnityEngine.TextCore.GlyphRect
     UnityEngine.UI:
+    - UnityEngine.EventSystems.EventTrigger/Entry
+    - UnityEngine.EventSystems.EventTrigger/TriggerEvent
     - UnityEngine.UI.AnimationTriggers
     - UnityEngine.UI.Button/ButtonClickedEvent
     - UnityEngine.UI.ColorBlock
@@ -97,6 +100,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 49
       Script: {instanceID: 0}
+    - Class: 64
+      Script: {instanceID: 0}
+    - Class: 65
+      Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
     - Class: 89
@@ -106,37 +113,37 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1602}
+      Script: {instanceID: 1584}
     - Class: 114
-      Script: {instanceID: 2186}
+      Script: {instanceID: 1628}
     - Class: 114
-      Script: {instanceID: 2312}
+      Script: {instanceID: 2212}
     - Class: 114
-      Script: {instanceID: 2506}
+      Script: {instanceID: 2340}
     - Class: 114
-      Script: {instanceID: 2612}
+      Script: {instanceID: 2534}
     - Class: 114
-      Script: {instanceID: 2818}
+      Script: {instanceID: 2640}
     - Class: 114
-      Script: {instanceID: 3986}
+      Script: {instanceID: 2846}
     - Class: 114
-      Script: {instanceID: 4092}
+      Script: {instanceID: 4020}
     - Class: 114
-      Script: {instanceID: 4344}
+      Script: {instanceID: 4126}
     - Class: 114
-      Script: {instanceID: 4978}
+      Script: {instanceID: 4380}
     - Class: 114
-      Script: {instanceID: 5052}
+      Script: {instanceID: 5014}
     - Class: 114
-      Script: {instanceID: 5298}
+      Script: {instanceID: 5088}
     - Class: 114
-      Script: {instanceID: 5600}
+      Script: {instanceID: 5634}
     - Class: 114
-      Script: {instanceID: 5752}
+      Script: {instanceID: 5786}
     - Class: 114
-      Script: {instanceID: 6070}
+      Script: {instanceID: 6104}
     - Class: 114
-      Script: {instanceID: 6692}
+      Script: {instanceID: 6726}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -177,39 +184,41 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1560}
+      Script: {instanceID: 1582}
     - Class: 114
-      Script: {instanceID: 1602}
+      Script: {instanceID: 1584}
     - Class: 114
-      Script: {instanceID: 2312}
+      Script: {instanceID: 1628}
     - Class: 114
-      Script: {instanceID: 2600}
+      Script: {instanceID: 2340}
     - Class: 114
-      Script: {instanceID: 2612}
+      Script: {instanceID: 2628}
     - Class: 114
-      Script: {instanceID: 2818}
+      Script: {instanceID: 2640}
     - Class: 114
-      Script: {instanceID: 3108}
+      Script: {instanceID: 2846}
     - Class: 114
-      Script: {instanceID: 3866}
+      Script: {instanceID: 3136}
     - Class: 114
-      Script: {instanceID: 5036}
+      Script: {instanceID: 3900}
     - Class: 114
-      Script: {instanceID: 5298}
+      Script: {instanceID: 5072}
     - Class: 114
-      Script: {instanceID: 5600}
+      Script: {instanceID: 5634}
     - Class: 114
-      Script: {instanceID: 6070}
+      Script: {instanceID: 6104}
     - Class: 114
-      Script: {instanceID: 6078}
+      Script: {instanceID: 6112}
     - Class: 114
-      Script: {instanceID: 6474}
+      Script: {instanceID: 6508}
     - Class: 114
-      Script: {instanceID: 6692}
+      Script: {instanceID: 6726}
     - Class: 114
-      Script: {instanceID: 7118}
+      Script: {instanceID: 6816}
     - Class: 114
-      Script: {instanceID: 7454}
+      Script: {instanceID: 7156}
+    - Class: 114
+      Script: {instanceID: 7492}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -237,10 +246,22 @@ ScriptsOnlyBuild:
     className: ContentSizeFitter
   - hash:
       serializedVersion: 2
+      Hash: b5007673bbbdb9d12597a1d8201370f5
+    assemblyName: UnityEngine.UI
+    namespaceName: UnityEngine.UI
+    className: Text
+  - hash:
+      serializedVersion: 2
       Hash: 55060a7bf226ac385ce19ebd450f199f
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UIElements
     className: PanelRaycaster
+  - hash:
+      serializedVersion: 2
+      Hash: a8e3571aa4f5e95dad37cd05688ab442
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: Outline
   - hash:
       serializedVersion: 2
       Hash: dd9dda1dfd39e605c49e72003342ef5d
@@ -501,6 +522,12 @@ ScriptsOnlyBuild:
     className: Benchmark04
   - hash:
       serializedVersion: 2
+      Hash: 793e501a8b390e756622f553a0612e3c
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: DragDrop
+  - hash:
+      serializedVersion: 2
       Hash: d90629714fa6b0145fcaffc87f5c6559
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
@@ -553,6 +580,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnSelectMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 34568eaa373ca575e3ebd34d08e7f580
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: DropHandler
   - hash:
       serializedVersion: 2
       Hash: 5b8b7230ad968399f6726aa1269dcdcb
@@ -631,6 +664,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: EnvMapAnimator
+  - hash:
+      serializedVersion: 2
+      Hash: 271fe09835ef9c20af1f0d5e3860f53a
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: MenuManager
   - hash:
       serializedVersion: 2
       Hash: 665da785348a8806bf1524fe10742a60
@@ -715,6 +754,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro
     namespaceName: TMPro
     className: TMP_SubMeshUI
+  - hash:
+      serializedVersion: 2
+      Hash: ef4604855321bff7efbeb896c312c31b
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: DragHandler
   - hash:
       serializedVersion: 2
       Hash: 9078325c2a6f6a2d9612ade897511860
@@ -919,12 +964,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnDeselectMessageListener
-  - hash:
-      serializedVersion: 2
-      Hash: b5007673bbbdb9d12597a1d8201370f5
-    assemblyName: UnityEngine.UI
-    namespaceName: UnityEngine.UI
-    className: Text
   - hash:
       serializedVersion: 2
       Hash: 1ce63d97d1ca25cba2d91d5f32fd5f79
@@ -1173,6 +1212,12 @@ ScriptsOnlyBuild:
     className: ButtonHover
   - hash:
       serializedVersion: 2
+      Hash: eb52f3a2cbc6c27208c1ec72b5d32f1b
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: ReplaceableModel
+  - hash:
+      serializedVersion: 2
       Hash: e2734bcc7b3e94776ade5d59f54fec1e
     assemblyName: Assembly-CSharp
     namespaceName: TMPro.Examples
@@ -1183,6 +1228,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline
     namespaceName: UnityEngine.Timeline
     className: SignalTrack
+  - hash:
+      serializedVersion: 2
+      Hash: d0642b23c07596588cc8734940455ce8
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: OutlineSelection
   - hash:
       serializedVersion: 2
       Hash: 67272c9c30c50b68ef1ce72ac0191c57
@@ -1319,4 +1370,4 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Scenes/LoadingScene.unity
   - Assets/Scenes/MainScene.unity
-  playerPath: D:/Kukakr150Program/My project (3).exe
+  playerPath: D:/Kukakr150Program/N.P. Robotics RoboAssembly.exe

@@ -8,6 +8,9 @@ TagManager:
   - Draggable
   - Selectable
   - ReplaceableModel
+  - Object1
+  - Object2
+  - Object3
   layers:
   - Default
   - TransparentFX
