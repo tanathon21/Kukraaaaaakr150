@@ -362,7 +362,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5622b864a0008cd499e8ee00162db89b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 99cef069e1248b546aaa000a77aaa9cb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -387,7 +387,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 192347908}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6366ee97f6b541449155028b9487355a, type: 3}
   m_Name: 
@@ -429,7 +429,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.000012337631}
+  m_AnchoredPosition: {x: 0, y: 0.00073512475}
   m_SizeDelta: {x: 0, y: 1080}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &299819967
@@ -663,7 +663,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 34fffae03f3966041ab02e69f35dc506, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 195e99056b475854d8e3ab9b97067f9e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -688,7 +688,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 506995301}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 835a7627aab72c349ad3a7d23748c7ca, type: 3}
   m_Name: 
@@ -776,7 +776,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1874672110}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.9333982
+  m_Size: 0.99993783
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -921,7 +921,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c1fda9c6a534bd24e97feed3acaecdb1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7848bef58ede0404590d2bba37f6894e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1208,6 +1208,53 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1379879447}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1398614430
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1398614432}
+  - component: {fileID: 1398614431}
+  m_Layer: 0
+  m_Name: ShowCursor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1398614431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1398614430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6e65533f4176eb4e848549ab1471281, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ReleasedState: {fileID: 2800000, guid: 5622b864a0008cd499e8ee00162db89b, type: 3}
+  PressedState: {fileID: 2800000, guid: 5622b864a0008cd499e8ee00162db89b, type: 3}
+  _cursorMode: 0
+--- !u!4 &1398614432
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1398614430}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 850.0987, y: 836.5368, z: -0.83450425}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1408426187
 GameObject:
   m_ObjectHideFlags: 0
@@ -1756,9 +1803,9 @@ MonoBehaviour:
   color1: {r: 1, g: 0, b: 0, a: 1}
   color2: {r: 0, g: 1, b: 0, a: 1}
   color3: {r: 0, g: 0, b: 1, a: 1}
-  cursorTexture1: {fileID: 0}
-  cursorTexture2: {fileID: 0}
-  cursorTexture3: {fileID: 0}
+  cursorTexture1: {fileID: 2800000, guid: 5622b864a0008cd499e8ee00162db89b, type: 3}
+  cursorTexture2: {fileID: 2800000, guid: c1fda9c6a534bd24e97feed3acaecdb1, type: 3}
+  cursorTexture3: {fileID: 2800000, guid: 34fffae03f3966041ab02e69f35dc506, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1767,3 +1814,4 @@ SceneRoots:
   - {fileID: 1591898723}
   - {fileID: 577053}
   - {fileID: 1151829948}
+  - {fileID: 1398614432}
