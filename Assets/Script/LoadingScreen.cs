@@ -5,23 +5,43 @@ using System.Collections;
 
 public class LoadingScreen : MonoBehaviour
 {
-    public Slider progressBar; // ตัว Slider ที่จะใช้แสดงสถานะการโหลด
-    public Text progressText; // ตัว Text ที่จะใช้แสดงสถานะการโหลด (ถ้ามี)
-    public float fakeLoadingTime = 3.0f; // เวลาหน่วงในการโหลด (หน่วยเป็นวินาที)
-    public CanvasGroup imageCanvasGroup; // ตัว CanvasGroup ของรูปภาพที่ต้องการให้ fade
+    public Slider progressBar; // ตัว Slider ที่ใช้แสดงสถานะการโหลด
+    public Text progressText; // ตัว Text ที่ใช้แสดงเปอร์เซ็นต์การโหลด
+    public CanvasGroup imageCanvasGroup; // CanvasGroup สำหรับรูปภาพที่ต้องการให้ fade
+    public float baseLoadingTime = 3.0f; // เวลาหน่วงพื้นฐานในการโหลด (หน่วยเป็นวินาที)
+
+    private float fakeLoadingTime; // เวลาหน่วงที่ปรับได้
 
     void Start()
     {
-        // เรียก Coroutine เพื่อเริ่มโหลด Scene
+        // คำนวณเวลาหน่วงการโหลดตามสมรรถภาพของอุปกรณ์
+        CalculateFakeLoadingTime();
+
+        // เริ่มโหลด Scene
         StartCoroutine(LoadAsyncOperation());
+    }
+
+    void CalculateFakeLoadingTime()
+    {
+        // กำหนดเวลาหน่วงการโหลดตามขนาด RAM
+        if (SystemInfo.systemMemorySize >= 8192) // 8 GB = 8192 MB
+        {
+            fakeLoadingTime = baseLoadingTime; // สำหรับเครื่องที่มี RAM อย่างน้อย 8 GB
+        }
+        else
+        {
+            // หาก RAM ต่ำกว่า 8 GB ลดเวลาหน่วง (หรือปรับตามที่คุณต้องการ)
+            fakeLoadingTime = baseLoadingTime * 2.0f; // เพิ่มเวลาหน่วง 2.0 เท่า
+        }
+
+        // จำกัดค่าระหว่าง 1 และ 10 วินาที
+        fakeLoadingTime = Mathf.Clamp(fakeLoadingTime, 1.0f, 10.0f);
     }
 
     IEnumerator LoadAsyncOperation()
     {
-        // ตัวอย่างการโหลด Scene ที่ชื่อ "MainScene" แบบ Asynchronously
+        // โหลด Scene แบบ Asynchronously
         AsyncOperation gameLevel = SceneManager.LoadSceneAsync("MainScene");
-        
-        // ปิดการโหลดอัตโนมัติเพื่อให้การโหลดช้าลง
         gameLevel.allowSceneActivation = false;
 
         float elapsedTime = 0f;
@@ -29,7 +49,7 @@ public class LoadingScreen : MonoBehaviour
         while (elapsedTime < fakeLoadingTime)
         {
             elapsedTime += Time.deltaTime;
-            // อัพเดต Progress Bar และ Text
+            // อัปเดต Progress Bar และ Text
             progressBar.value = Mathf.Clamp01(elapsedTime / fakeLoadingTime);
             progressText.text = Mathf.RoundToInt(progressBar.value * 100) + "%";
 
